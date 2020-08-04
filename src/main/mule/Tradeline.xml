@@ -130,7 +130,7 @@ output application/json
     </flow>
     <flow name="put:\tradeline:application\json:Tradeline-config">
         <db:update doc:name="Update" doc:id="c9258370-126f-4e9a-8131-4e4224ede28a" config-ref="Database_Config">
-			<db:sql ><![CDATA[update tradeline set MINPAYMENTPERCENTAGE =:payment, creditorName =:creditname, 
+			<db:sql ><![CDATA[update tradeline set MINPAYMENTPERCENTAGE =:payment, creditorName =:creditorname, 
 FIRSTNAME =:fn, LASTNAME =:ln, BALANCE =:balance where ID=:id]]></db:sql>
 			<db:input-parameters ><![CDATA[#[{
 'id':payload.ID,
