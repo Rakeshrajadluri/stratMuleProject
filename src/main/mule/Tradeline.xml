@@ -133,12 +133,12 @@ output application/json
 			<db:sql ><![CDATA[update tradeline set MINPAYMENTPERCENTAGE =:payment, creditorName =:creditname, 
 FIRSTNAME =:fn, LASTNAME =:ln, BALANCE =:balance where ID=:id]]></db:sql>
 			<db:input-parameters ><![CDATA[#[{
-'creditname':payload.creditorName,
-'fn':payload.firstName,
-'ln':payload.lastName,
-'payment':payload.minPaymentPercentage,
-'balance':payload.balance,
-'id':payload.id
+'id':payload.ID,
+'creditorname':payload.CREDITORNAME,
+'fn':payload.FIRSTNAME,
+'ln':payload.LASTNAME,
+'payment':payload.MINPAYMENTPERCENTAGE,
+'balance':payload.BALANCE
 }]]]></db:input-parameters>
 		</db:update>
 		<ee:transform xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd">
@@ -192,12 +192,12 @@ payload]]></ee:set-payload>
 VALUES (:id,:creditorname,:fn,:ln,:payment,:balance)
 ]]></db:sql>
 			<db:input-parameters ><![CDATA[#[{
-'id':payload.id,
-'creditorname':payload.creditorName,
-'fn':payload.firstName,
-'ln':payload.lastName,
-'payment':payload.minPaymentPercentage,
-'balance':payload.balance
+'id':payload.ID,
+'creditorname':payload.CREDITORNAME,
+'fn':payload.FIRSTNAME,
+'ln':payload.LASTNAME,
+'payment':payload.MINPAYMENTPERCENTAGE,
+'balance':payload.BALANCE
 }]]]></db:input-parameters>
 		</db:insert>
 		<ee:transform xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd">
