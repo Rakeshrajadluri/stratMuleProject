@@ -165,7 +165,7 @@ output application/json
 output application/json
 ---
 {
-  message: "Tradeline has been added."
+  message: "Tradeline has been deleted."
 }]]></ee:set-payload>
             </ee:message>
         </ee:transform>
