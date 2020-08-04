@@ -1,0 +1,66 @@
+#%RAML 1.0
+baseUri: https://anypoint.mulesoft.com/mocking/api/v1/links/33c61322-bc59-45c4-8a00-a35d4948e0ba/ # 
+title: Strat Tradeline
+version: 1.0
+
+
+/tradeline:
+  get:
+    displayName: Get tradeline
+    queryParameters:
+      id: 
+        displayName: ID
+        required: true
+       
+    responses:
+      200:
+        body:
+          application/json:
+            examples:
+              output: !include tradelineexample.raml
+
+  post:
+    displayName: Create tradeline
+    body: 
+      application/json:
+        examples:
+          input: !include tradelineexample.raml
+
+    responses: 
+      201:
+        body: 
+          application/json:
+            example:
+              message: Tradeline has been added.
+        
+  delete:
+    displayName: Delete tradeline
+    queryParameters:
+      id: 
+        displayName: ID
+        required: true
+
+    responses:
+      200:
+        body:
+          application/json:
+            example:
+              message: Tradeline has been added.
+
+  put:
+    displayName: Update tradeline
+    queryParameters:
+    body: 
+      application/json:
+        examples:
+          input: !include tradelineexample.raml
+
+    responses: 
+      200:
+        body: 
+          application/json:
+            example:
+              message: Tradeline has been updated.
+
+
+                
